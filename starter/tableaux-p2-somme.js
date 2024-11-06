@@ -15,8 +15,47 @@ Version alternative (avec BONUS) :
 4. Affichez le message final : "… + … + … = …".
 */
 
+const values = [11, 3, 7, 2, 9, 10];
+console.log("Voici mon tableau de nombres :");
+for (const value of values) {
+    console.log(value);
+}
 
 
+// forEach
+let somme = 0;
+values.forEach(function (value) {
+    somme += value;
+});
+console.log("La somme des nombres de mon tableau est", somme);
+// mettre le console.log dans la function applique la phrase a chaque nombres
 
 
+//for/of
+let somme2 = 0;
 
+for (let value of values) {
+    somme2 += value;
+}
+console.log("La somme des nombres de mon tableau est", somme2);
+
+
+//BONUS
+let somme3 = 0;
+let message= '';
+for (let i = 0; i < values.length; i++) {
+    message += values[i];
+    if (i < values.length - 1){
+        message += '+';
+    }
+}
+
+
+// 3. Calculer la somme avec une boucle 'for/of'
+for (let value of values) {
+    somme3 += value;
+}
+
+// 4. Afficher le message final
+message += " = " + somme3;
+console.log(message);
